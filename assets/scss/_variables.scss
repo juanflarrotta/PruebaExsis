@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "open_sansregular";
+    src: url("../fonts/Open_Sans/OpenSans-Regular.ttf");
+}
+@font-face {
+    font-family: "open_sanssemibold";
+    src: url("../fonts/Open_Sans/OpenSans-SemiBold.ttf");
+}
+
+$breakpoints: (
+    "mobile": (
+        max-width: 440px,
+    ),
+    "tablet": (
+        min-width: 750px,
+    ),
+    "desktop": (
+        min-width: 1170px,
+    ),
+) !default;
+@mixin break($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media #{inspect(map-get($breakpoints, $breakpoint))} {
+            @content;
+        }
+    } @else {
+        @warn "Value `#{$breakpoint}` couldn't be recognized. Breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
+$gris: #4d4d4d;
+$blanco: #ffffff;
+$negro: #212121;
+$gris-claro: #c6c6c6;
+$gris-footer: #7c7c7c;
+$gris-form: #e6e6e6;
+$azul: #36aadd;
+$verde: #bbd550;
+$verde-oscuro: #96a82a;
