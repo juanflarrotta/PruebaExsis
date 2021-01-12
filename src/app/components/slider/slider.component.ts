@@ -10,15 +10,15 @@ export class SliderComponent implements OnInit {
   @ViewChild('nav') slider: NgImageSliderComponent;
   imageObject: Array<object> = [
     {
-      thumbImage: '../../../assets/images/imagen1.jpg',
+      thumbImage: 'assets/images/imagen1.jpg',
       alt: 'alt of image',
     },
     {
-      thumbImage: '../../../assets/images/imagen2.jpg',
+      thumbImage: 'assets/images/imagen2.jpg',
       alt: 'alt of image',
     },
     {
-      thumbImage: '../../../assets/images/imagen3.jpg',
+      thumbImage: 'assets/images/imagen3.jpg',
       alt: 'alt of image',
     },
   ];
