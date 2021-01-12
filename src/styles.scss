@@ -1,1 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../src/assets/scss/variables";
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.slider {
+    height: 270px;
+    .ng-image-slider-container,
+    .main,
+    .ng-image-slider,
+    img {
+        height: calc((100vh - 100%)) !important;
+    }
+    img {
+        margin: 0 !important;
+    }
+    .next,
+    .prev {
+        display: none;
+    }
+}
+@include break("tablet") {
+    .slider {
+        height: 270px;
+        .ng-image-slider-container,
+        .main,
+        .ng-image-slider,
+        img {
+            height: calc((100vh - 201px)) !important;
+        }
+        .next,
+        .prev {
+            display: inline-block;
+            top: 80% !important;
+        }
+        .next {
+            left: 100px;
+        }
+        .prev {
+            left: 40px !important;
+        }
+    }
+}
+@include break("desktop") {
+    .content {
+        .slider {
+            height: 435px;
+            width: 775px;
+            display: inline-block;
+            .ng-image-slider-container,
+            .main,
+            .ng-image-slider,
+            img {
+                width: 775px !important;
+                height: 435px !important;
+            }
+            .next {
+                left: 100px !important;
+                top: 85% !important;
+            }
+            .prev {
+                left: 40px !important;
+                top: 85% !important;
+            }
+        }
+    }
+}

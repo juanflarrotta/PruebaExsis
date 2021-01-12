@@ -1,0 +1,17 @@
+@import "../../../assets/scss/variables";
+.slider {
+    button {
+        display: none;
+    }
+}
+@include break("tablet") {
+    .slider {
+        position: relative;
+        button {
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}

@@ -1,0 +1,104 @@
+<form
+  class="form"
+  [formGroup]="form"
+  (ngSubmit)="save($event)"
+  id="miFormulario"
+>
+  <div class="form-group form__brand">
+    <select
+      class="form-control"
+      formControlName="auto"
+      [class.invalidate]="autoFieldIsInvalid"
+      [class.validate]="autoFieldIsValid"
+      pla
+    >
+      <option value="" selected disabled>Marca del auto</option>
+      <option *ngFor="let auto of marcaAuto">{{ auto }}</option>
+    </select>
+  </div>
+  <div class="form-group form__model">
+    <select
+      class="form-control"
+      formControlName="model"
+      [class.invalidate]="modelFieldIsInvalid"
+      [class.validate]="modelFieldIsValid"
+    >
+      <option value="" selected disabled>Modelo del auto</option>
+      <option *ngFor="let model of modelAuto">{{ model }}</option>
+    </select>
+  </div>
+  <div class="form-group form__year">
+    <select
+      class="form-control"
+      formControlName="year"
+      [class.invalidate]="yearFieldIsInvalid"
+      [class.validate]="yearFieldIsValid"
+    >
+      <option value="" selected disabled>año</option>
+      <option *ngFor="let year of yearAuto">{{ year }}</option>
+    </select>
+  </div>
+  <div class="form-group form__mail">
+    <input
+      type="email"
+      class="form-control"
+      [class.invalidate]="emailFieldIsInvalid"
+      [class.validate]="emailFieldIsValid"
+      placeholder="Email"
+      formControlName="email"
+    />
+  </div>
+  <div class="form-group form__phone">
+    <input
+      type="tel"
+      class="form-control"
+      [class.invalidate]="telFieldIsInvalid"
+      [class.validate]="telFieldIsValid"
+      placeholder="Teléfono celular"
+      formControlName="tel"
+      pattern=""
+    />
+  </div>
+  <button
+    class="form__btn"
+    data-toggle="modal"
+    data-target="#exampleModal"
+    type="submit"
+    [disabled]="form.invalid"
+  >
+    Cotizar ahora
+  </button>
+</form>
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Felicitacones</h5>
+        <button
+          type="button"
+          id="btnCerrar"
+          (click)="cerrar()"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Marca del auto:<span id="datoMarca"></span></p>
+        <p>Modelo del auto:<span id="datoModelo"></span></p>
+        <p>Año del auto:<span id="datoYear"></span></p>
+        <p>Email:<span id="datoEmail"></span></p>
+        <p>Celular:<span id="datoPhone"></span></p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+@import "../../../assets/scss/variables";
+footer {
+    background-color: $gris-footer;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    .copyright {
+        height: 24px;
+        line-height: 24px;
+        background-color: $negro;
+        color: $blanco;
+        text-align: center;
+        font: 12px "open_sanssemibold";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    height: 129px;
+    padding: 20px 15px 25px 25px;
+
+    max-width: 1170px;
+    margin: 0 auto;
+    &__list {
+        margin: 0;
+        color: $blanco;
+        padding-left: 25px;
+        &__item {
+            span {
+                color: $blanco;
+                font: 12px "open_sanssemibold";
+            }
+        }
+    }
+    &__redes {
+        color: $blanco;
+        > span {
+            font: 12px "open_sanssemibold";
+        }
+        &__list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        &__item {
+            margin-left: 8px;
+            a {
+                background-color: $blanco;
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                &::before {
+                    font-size: 16px;
+                    color: $gris-footer;
+                }
+            }
+        }
+    }
+}
+@include break("mobile") {
+    .footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+        &__list {
+            margin-bottom: 15px;
+        }
+    }
+}
+@include break("desktop") {
+    footer {
+        width: 100%;
+    }
+}

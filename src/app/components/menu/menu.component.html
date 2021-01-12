@@ -1,0 +1,21 @@
+<div class="menu">
+  <button class="menu__btn" (click)="activarMenu()" id="btnMenu">
+    <span class="menu__btn__icon"></span>
+  </button>
+  <ul class="menu__list" id="listMenu">
+    <li class="menu__list__item" *ngFor="let item of menu; let i = index">
+      <span *ngIf="i === 0" id="btnSubmenu" (click)="activarSubmenu()"
+        ><a>{{ item }}</a>
+        <ul class="submenu" id="listSubmenu">
+          <li class="submenu__item" *ngFor="let item of subMenu">{{ item }}</li>
+        </ul>
+      </span>
+      <span *ngIf="i === 1"
+        ><a>{{ item }}</a></span
+      >
+      <span *ngIf="i === 2"
+        ><a href="../../../assets/pdf/terminosYCondiciones.pdf" download="terminosYCondiciones">{{ item }}</a></span
+      >
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,14 @@
+@import "../../../assets/scss/variables";
+.logo {
+    width: 100vw;
+    text-align: center;
+}
+@include break("desktop") {
+    .logo {
+        width: auto;
+        img {
+            height: 38px;
+            width: 258px;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+<footer>
+  <div class="footer">
+    <ul class="footer__list">
+      <li class="footer__list__item" *ngFor="let item of footer; let i = index">
+        <span
+          ><a>{{ item }}</a></span
+        >
+      </li>
+    </ul>
+    <div class="footer__redes">
+      <span>Síguenos en nuestras redes sociales</span>
+      <ul class="footer__redes__list">
+        <li
+          class="footer__redes__item"
+          *ngFor="let item of redes; let i = index"
+        >
+          <a class="{{ item.icono }}" target="__blank" href="{{ item.link }}"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="copyright" id="copyright">
+
+  </div>
+</footer>

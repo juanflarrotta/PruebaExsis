@@ -1,0 +1,19 @@
+@import "../../../assets/scss/variables";
+header {
+    background-color: $gris;
+}
+nav {
+    height: 48px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+}
+@include break("desktop") {
+    nav {
+        height: 80px;
+        max-width: 1170px;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+}
